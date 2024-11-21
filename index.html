@@ -1,57 +1,118 @@
-<!Doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document M Arief Rachman Hakim</title>
-        <link rel="stylesheet" href="css\styles.css">
-    </head>
-    
-    <body>
+<!DOCTYPE html>
+<html lang="en"> <!-- Menentukan tipe dokumen sebagai HTML5 dan bahasa default halaman adalah Inggris -->
+<head>
+    <meta charset="UTF-8"> <!-- Menentukan karakter encoding dokumen agar mendukung berbagai bahasa -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mengatur agar halaman responsif pada berbagai perangkat -->
+    <title>Rief's Adventure - Wanna Be Software Engineer</title> <!-- Judul halaman yang akan muncul di tab browser -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Menghubungkan file CSS eksternal untuk styling halaman -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">RA</div> <!-- Menampilkan logo dengan teks "RA" -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <!-- ☰ Tombol untuk membuka/menutup menu navigasi pada perangkat kecil -->
+            ☰
+        </button>
+        <ul class="nav-links"> <!-- Daftar link navigasi untuk berpindah antar bagian halaman -->
+            <li><a href="#home">Home</a></li> <!-- Link ke bagian Home -->
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <header class="main-header">
-            <div class="main-logo"></div>
-            <nav>
-                <a class="navbar" href="#">Home</a>
-                <a class="navbar" href="#">Our Package</a>
-                <a class="navbar" href="#">Call Us</a>
-            </nav>
-        </header>
-        <hr/>
-        <main>
-            <header class="main-article-header">
-                <h1>Your Trusted Travel Agent</h1>
-                <h3>Your Hapiness is our hapiness</h3>
-            </header>
-            
-            <!-- Konten Utama -->
-            <article class="main-article">
-                <!--Konten Banner Autoslide-->
-                <section class="container-banner">
-                    <div class="banner-autoslide"></div>
-                    <p>Liburan jadi menyenangkan dengan travel Agentku!</p>
-                </section>
+    <!-- Contact Us Section -->
+    <section id="home" class="contact-us">
+        <div class="banner-container">
+            <h2 id="banner-header">Beach Getaway</h2> <!-- Judul banner yang berubah sesuai slide -->
+            <!-- Gambar slider otomatis yang berganti sesuai dengan animasi -->
+            <div class="banner-autoslide image1"></div>
+            <div class="banner-autoslide image2"></div>
+            <div class="banner-autoslide image3"></div>
+        </div>
 
-                <!--Form Contact Us-->
-                <section>
-                    <h2>Form Contact Us</h2>
-                </section>
-            </article>
+        <div class="form-container">
+            <h1>Contact Us</h1> <!-- Judul form kontak -->
+            <!-- Form input data untuk menangkap informasi dari pengguna -->
+            <form id="contactForm">
+                <label for="name">Your Name :</label> <!-- Label untuk field nama pengguna -->
+                <input type="text" id="name" name="name" placeholder="Type Your First and Last Name" required> <!-- Input untuk nama -->
 
-            <!-- Konten Our Package -->
-            <article>
-                <header class="our-package-header">
-                    <h1>Our Package</h1>
-                </header>
-                <section class="our-package-content">
-                    <h2>Konten Our Package</h2>
-                </section>
-            </article>
-        </main>
+                <label for="email">Your Email :</label> <!-- Label untuk field email pengguna -->
+                <input type="email" id="email" name="email" placeholder="Type Your E-mail" required>
 
-        <footer>
-            <span>Made By Rief94</span>
-        </footer>
+                <label for="package">Choose Your Package :</label> <!-- Label untuk memilih paket -->
+                <select name="package" id="package" required> <!-- Dropdown untuk memilih paket perjalanan -->
+                    <option value="" disabled selected>Select a Package</option> <!-- Placeholder untuk dropdown -->
+                    <option value="Beach Getaway">Beach Getaway</option> <!-- Pilihan paket pantai -->
+                    <option value="Mountain Adventure">Mountain Adventure</option>
+                    <option value="City Exploration">City Exploration</option>
+                </select>
+                <button type="submit">Send</button> <!-- Tombol untuk mengirim form -->
+            </form>
+        </div>
+    </section>
 
-    </body>
+    <!-- Packages Section -->
+    <section id="packages" class="section">
+        <h2>Explore Our Packages</h2> <!-- Judul untuk bagian paket perjalanan -->
+        <div class="packages-container">
+            <!-- Setiap card menunjukkan detail paket perjalanan -->
+            <div class="package-card">
+                <h3>Beach Getaway</h3> <!-- Judul paket -->
+                <p>Relax by the sea for just <b>Rp 10,000,000,-</b></p> <!-- Deskripsi paket -->
+            </div>
+            <div class="package-card">
+                <h3>Mountain Adventure</h3>
+                <p>Conquer the mountains for <b>Rp 12,000,000,-</b></p>
+            </div>
+            <div class="package-card">
+                <h3>City Exploration</h3>
+                <p>Discover bustling cities for <b>Rp 15,000,000,-</b></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="section dark-bg">
+        <h2>What Our Clients Say?</h2> <!-- Judul untuk bagian testimonial -->
+        <div class="testimonials-container">
+            <!-- Setiap card menunjukkan testimonial pengguna -->
+            <div class="testimonial-card">
+                <img src="https://avatarfiles.alphacoders.com/126/thumb-1920-126156.jpg" alt="Ironman" class="testimonial-img"> <!-- Gambar avatar klien -->
+                <p>"Outstanding service, amazing deals, and smooth planning!  My family had the best time ever on our beach vacation, and the best part was that Thanos wasn't there."</p> <!-- Testimonial -->
+                <footer>- Ironman -</footer> <!-- Nama klien -->
+            </div>
+            <div class="testimonial-card">
+                <img src="https://lh3.googleusercontent.com/IcsiW0iRzgGoNaMYKm5ILLnVyTiTFC26_b27Y6UvawwREGIY2qrULtVHdtNxRNIZZGHY" alt="Optimus Prime" class="testimonial-img">
+                <p>"That mountain adventure was exactly what I needed.  Everything was planned perfectly, and the views were absolutely breathtaking! Better because there were no Decepticons to ruin our vacation!"</p>
+                <footer>- Optimus Prime -</footer>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://play-lh.googleusercontent.com/WdDeE4cxtISzioEcx-HKsh9l9a3vPmjahGY45RoW8JMfTUFctWgp7yeN6Tf748YOJb0" alt="Ultaman Tiga" class="testimonial-img">
+                <p>"Tsah Tsah Tsah Tsah Tsaaaaaahhhhhhh Tsha Tsyaaa Hosh Rief's Adventure"</p>
+                <footer>- Ultraman Tiga -</footer>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Statement Section -->
+    <section id="closing" class="section closing-section">
+        <h2>Ready to Start Your Adventure?</h2> <!-- Judul bagian penutup -->
+        <p>Don't wait any longer! Get in touch with us today to book your next travel experience. Our team is ready for it.</p> <!-- Ajakan untuk bertindak -->
+        <button class="contact-us-btn">Contact Us</button> <!-- Tombol untuk menghubungi tim -->
+    </section>  
+
+    <footer>
+        <section>
+            <div class="footer-logo">RA</div> <!-- Logo footer -->
+            <div>Terms of Services</div> <!-- Link ke syarat layanan -->
+            <div>Privacy Policy</div> <!-- Link ke kebijakan privasi -->
+            <p>© 2024 <b>Rief's Adventure</b>. All rights reserved.</p> <!-- Hak cipta -->
+        </section>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Menghubungkan file JavaScript untuk interaktivitas -->
+</body>
 </html>

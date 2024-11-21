@@ -1,0 +1,398 @@
+/* Ini CSS */
+.logo {
+    display: flex; /* Membuat elemen logo menjadi fleksibel sehingga dapat menggunakan properti flexbox untuk alignment. */
+    align-items: center; /* Menyelaraskan konten logo secara vertikal di tengah. */
+    font-weight: 700; /* Memberikan ketebalan huruf pada teks logo (bold). */
+    font-size: 1.5rem; /* Mengatur ukuran font logo sebesar 1.5rem (relative to root font size). Jangan lupa 1rem = 16px*/
+    font-style: italic; /* Membuat teks logo menjadi miring (italic). */
+    font-family: fantasy;
+}
+
+/* Style untuk body */
+body {
+    font-family: 'Arial', sans-serif; /* Mengatur font utama halaman menjadi Arial, dengan cadangan sans-serif. */
+    margin: 0; /* Menghilangkan margin default dari body. */
+    padding: 0; /* Menghilangkan padding default dari body. */
+    line-height: 1.6; /* Mengatur tinggi baris teks untuk keterbacaan. */
+    color: #333; /* Mengatur warna teks utama menjadi abu-abu gelap. */
+}
+
+/* Section styling */
+.section {
+    padding: 40px 20px; /* Memberikan ruang di sekitar elemen dengan padding atas/bawah 40px dan kiri/kanan 20px. */
+    text-align: center; /* Menyelaraskan semua konten dalam elemen ke tengah secara horizontal. */
+}
+
+.dark-bg {
+    background: #0078D7; /* Mengatur latar belakang elemen menjadi biru. */
+    color: white;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-between; /* Menempatkan elemen di kiri dan kanan dengan jarak di antara mereka. */
+    align-items: center;
+    background: #0078D7;
+    color: white;
+    padding: 10px 20px;
+    position: sticky; /* Membuat navbar tetap berada di bagian atas saat menggulir. */
+    top: 0; /* Menentukan posisi sticky berada di bagian atas layar. */
+    z-index: 1000; /* Memberikan prioritas tampilan agar berada di atas elemen lain. */
+}
+
+.nav-toggle {
+    display: none; /* Menyembunyikan tombol toggle secara default. */
+    font-size: 1.5em; /* Mengatur ukuran font tombol toggle. */
+    color: white;
+    background: none;
+    border: none; /* Menghilangkan border tombol. */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat hover. */
+}
+
+.nav-links {
+    display: flex; /* Mengatur elemen navigasi menggunakan flexbox. */
+    gap: 20px; /* Memberikan jarak 20px antara setiap elemen navigasi. */
+    list-style: none; /* Menghilangkan tanda bullet pada daftar navigasi. */
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan. */
+    font-size: 1em; /* Mengatur ukuran font tautan. */
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+/* Banner Header */
+.banner-container {
+    position: relative; /* Menempatkan elemen relatif terhadap posisinya yang normal. */
+    width: 100%; /* Memastikan elemen mengambil seluruh lebar container. */
+    height: 60vh; /* Mengatur tinggi elemen menjadi 60% dari tinggi viewport. */
+}
+
+#banner-header {
+    position: absolute; /* Menempatkan elemen secara absolut di dalam container relatif. */
+    top: 20px;
+    left: 20px; /* Memberikan jarak 20px dari bagian kiri container. */
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    z-index: 2; /* Memberikan prioritas agar elemen berada di atas elemen lain. */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Memberikan efek bayangan pada teks. */
+}
+
+/* Contact Us Section */
+.contact-us {
+    display: flex; /* Mengatur elemen menggunakan flexbox untuk tata letak. */
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+    flex-wrap: wrap; /* Memungkinkan elemen membungkus ke baris berikutnya jika ruang tidak cukup. */
+}
+
+/* Banner Container */
+.banner-container {
+    width: 48%; /* Mengatur lebar elemen menjadi 48% dari container. */
+    height: 60vh; /* Menentukan tinggi menjadi 60% dari viewport. */
+    overflow: hidden; /* Menyembunyikan elemen yang melampaui batas container. */
+    position: relative; /* Menempatkan elemen relatif terhadap container. */
+    margin-bottom: 20px; /* Memberikan jarak bawah sebesar 20px. */
+    perspective: 1500px; /* Menambahkan perspektif untuk efek 3D. */
+}
+
+/* Banner Autoslide */
+.banner-autoslide {
+    width: 100%; /* Memastikan elemen mengambil seluruh lebar container. */
+    height: 100%; /* Memastikan elemen mengambil seluruh tinggi container. */
+    position: absolute;
+    animation: slide 12s infinite; /* Menambahkan animasi dengan durasi 12 detik yang berulang. */
+    transform-style: preserve-3d; /* Memastikan elemen mempertahankan efek 3D saat transisi. */
+    transition: transform 1s ease; /* Memberikan transisi transformasi yang halus. */
+    border-radius: 5px; /* Memberikan sudut membulat pada elemen. */
+}
+
+/* Animasi slide dengan efek 3D */
+@keyframes slide {
+    0% {
+        opacity: 0; /* Elemen transparan pada awal animasi. */
+        transform: translateZ(-1000px) scale(0.9); /* Elemen bergerak ke belakang dan sedikit lebih kecil. */
+    }
+    33% {
+        opacity: 1; /* Elemen menjadi terlihat sepenuhnya. */
+        transform: translateZ(0) scale(1); /* Elemen kembali ke posisi normal dan ukuran penuh. */
+    }
+    66% {
+        opacity: 0;
+        transform: translateZ(1000px) scale(0.9);
+    }
+    100% {
+        opacity: 0; /* Elemen kembali transparan pada akhir animasi. */
+        transform: translateZ(-1000px) scale(0.9); /* Elemen kembali ke posisi awal. */
+    }
+}
+
+/* Gambar untuk masing-masing slide */
+.banner-autoslide.image1 {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIWYMWsNJskyU7GR-cpp4tUKWxs5zE4Ue24w&s') no-repeat center center/cover;
+    /* Menentukan gambar latar belakang untuk slide pertama dengan posisi center-center dan skala penuh. */
+    animation-delay: 0s; /* Tidak ada jeda untuk animasi pada slide pertama. */
+}
+
+.banner-autoslide.image2 {
+    background: url('https://c1.wallpaperflare.com/preview/947/526/515/hiking-trekking-mountains-cliffs.jpg') no-repeat center center/cover;
+    /* Menentukan gambar latar belakang untuk slide kedua. */
+    animation-delay: 4s; /* Memberikan jeda 4 detik sebelum animasi dimulai. */
+}
+
+.banner-autoslide.image3 {
+    background: url('https://images.unsplash.com/photo-1504556106489-6d450910aeb3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTd8fHxlbnwwfHx8fHw%3D') no-repeat center center/cover;
+    /* Menentukan gambar latar belakang untuk slide ketiga. */
+    animation-delay: 8s; /* Memberikan jeda 8 detik sebelum animasi dimulai. */
+}
+
+/* Animasi slide dengan efek transparansi */
+@keyframes slide {
+    0% { opacity: 0; } /* Slide tidak terlihat pada awal animasi. */
+    33% { opacity: 1; } /* Slide menjadi terlihat pada 33% durasi. */
+    66% { opacity: 0; } /* Slide mulai menghilang pada 66% durasi. */
+    100% { opacity: 0; } /* Slide sepenuhnya transparan pada akhir animasi. */
+}
+
+/* Updated Form Styles */
+form label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px; /* Memberikan jarak bawah sebesar 8px. */
+    display: block; /* Menampilkan label dalam baris baru. */
+}
+
+form input, form select, form textarea, form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* Memberikan jarak bawah antar elemen sebesar 20px. */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar elemen. */
+}
+
+form button {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    font-size: 1em;
+    cursor: pointer; /* Menambahkan kursor pointer saat tombol di-hover. */
+    padding: 15px;
+    transition: background-color 0.3s ease; /* Memberikan transisi halus pada perubahan warna latar. */
+}
+
+form button:hover {
+    background-color: #005BB5;
+}
+
+/* Container untuk form */
+.form-container {
+    width: 48%;
+    max-width: 600px; /* Memberikan lebar maksimum sebesar 600px. */
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan ringan. */
+    margin: 0 auto;
+    display: flex; /* Menggunakan flexbox untuk tata letak. */
+    flex-direction: column; /* Menyusun elemen secara vertikal. */
+    gap: 10px;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%; /* Memperbesar form untuk perangkat dengan lebar di bawah 768px. */
+    }
+}
+
+/* Section Packages */
+.packages-container {
+    display: flex; /* Menggunakan flexbox untuk tata letak elemen dalam container. */
+    justify-content: center; /* Memusatkan elemen secara horizontal. */
+    gap: 20px;
+    flex-wrap: wrap; /* Memungkinkan elemen membungkus ke baris baru jika ruang tidak mencukupi. */
+    margin-top: 20px; /* Memberikan jarak atas sebesar 20px dari elemen sebelumnya. */
+}
+
+.package-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan ringan. */
+    transition: all 0.3s ease; /* Menambahkan transisi halus pada semua properti yang dapat berubah. */
+    max-width: 300px; /* Memberikan lebar maksimum sebesar 300px. */
+    text-align: center; /* Menyelaraskan teks di tengah kartu. */
+}
+
+.package-card:hover {
+    transform: scale(1.05); /* Memperbesar kartu sedikit saat di-hover. */
+}
+
+/* Testimonial Section */
+.testimonials-container {
+    display: flex; /* Menggunakan flexbox untuk tata letak elemen. */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Memungkinkan elemen membungkus ke baris baru jika ruang tidak mencukupi. */
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan ringan. */
+    width: 300px; /* Menentukan lebar tetap sebesar 300px. */
+    text-align: center; /* Menyelaraskan teks di tengah kartu. */
+}
+
+.testimonial-card p {
+    font-size: 1.1em;
+    margin-bottom: 10px; /* Memberikan jarak bawah sebesar 10px. */
+    color: #333;
+}
+
+.testimonial-card footer {
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial-img {
+    width: 60px; /* Menentukan lebar gambar sebesar 60px. */
+    height: 60px; /* Menentukan tinggi gambar sebesar 60px. */
+    border-radius: 50%;
+    margin-bottom: 10px; /* Memberikan jarak bawah sebesar 10px. */
+}
+
+/* Closing Section */
+.closing-section {
+    background: #0078D7;
+    color: white;
+    text-align: center; /* Menyelaraskan teks di tengah bagian penutup. */
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.closing-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px; /* Memberikan jarak bawah sebesar 20px. */
+}
+
+.closing-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px; /* Memberikan jarak bawah sebesar 30px. */
+}
+
+.contact-us-btn {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    background-color: #FFD700;
+    color: #0078D7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Menambahkan kursor pointer saat tombol di-hover. */
+}
+
+.contact-us-btn:hover {
+    background-color: #FFC107; /* Memberikan warna kuning gelap saat tombol di-hover. */
+}
+
+/* Responsiveness - Media Query untuk layar maksimal 768px */
+@media (max-width: 768px) {
+    .contact-us {
+        flex-direction: column; /* Mengubah arah elemen menjadi kolom untuk tata letak vertikal. */
+        align-items: center;
+        padding: 20px;
+    }
+
+    .banner-container {
+        width: 100%; /* Mengatur lebar penuh untuk layar kecil. */
+        height: 40vh; /* Mengurangi tinggi banner untuk menyesuaikan layar kecil. */
+        margin-bottom: 20px; /* Memberikan jarak bawah sebesar 20px. */
+    }
+
+    .form-container {
+        width: 100%; /* Mengatur lebar penuh untuk form pada layar kecil. */
+        padding: 20px;
+        box-sizing: border-box; /* Memastikan padding tidak menambah total lebar. */
+    }
+
+    form input, form select, form textarea, form button {
+        font-size: 1em;
+    }
+
+    form button {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Menyusun link navigasi secara vertikal. */
+        display: none; /* Menyembunyikan link navigasi secara default. */
+        background: #0078D7;
+        position: absolute;
+        width: 100%; /* Mengatur lebar penuh pada menu navigasi. */
+        top: 100%; /* Memindahkan menu navigasi ke bawah tombol toggle. */
+        left: 0; /* Memastikan menu sejajar di sisi kiri layar. */
+    }
+
+    .nav-links.show {
+        display: flex; /* Menampilkan menu navigasi saat class 'show' ditambahkan. */
+    }
+
+    .nav-toggle {
+        display: block; /* Menampilkan tombol toggle menu pada layar kecil. */
+    }
+
+    .testimonial-card {
+        width: 80%; /* Mengatur lebar kartu testimonial menjadi 80% dari container. */
+    }
+
+    .package-card {
+        flex: 1 1 calc(33% - 20px); /* Membagi lebar kartu menjadi 33% dari container, dikurangi gap. */
+        max-width: 250px; /* Mengatur lebar maksimum untuk setiap kartu paket. */
+    }
+}
+
+/* Responsiveness - Media Query untuk layar maksimal 480px */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    form input, form select, form textarea, form button {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    form button {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+/* Footer Section */
+footer {
+    text-align: center; /* Menyelaraskan teks di tengah untuk elemen footer. */
+}
+
+.footer-logo {
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: fantasy;
+}
